@@ -1,3 +1,4 @@
+# -*- encoding: utf-8 -*-
 import requests
 import json
 from bs4 import BeautifulSoup
@@ -19,6 +20,5 @@ for title in titles:
     movie_datum['code'] = code
     movie_data.append(movie_datum)
 
-json_file = json.dumps(movie_data)
 with open('movie_code.json', "w", encoding='euc-kr') as f:
-    f.write(json_file)
+    json.dump(movie_data, f, ensure_ascii=False)
