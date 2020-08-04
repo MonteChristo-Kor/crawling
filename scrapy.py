@@ -1,5 +1,5 @@
 import requests
-import csv
+import json
 from bs4 import BeautifulSoup
 
 url = "https://movie.naver.com/movie/running/current.nhn"
@@ -18,5 +18,7 @@ for title in titles:
     movie_datum['title'] = name
     movie_datum['code'] = code
     movie_data.append(movie_datum)
-    
-print(movie_data)
+
+json_file = json.dumps(movie_data)
+with open('movie_code.json', "w", encoding='euc-kr') as f:
+    f.write(json_file)
