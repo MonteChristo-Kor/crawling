@@ -21,4 +21,4 @@ for title in titles:
     movie_data.append(movie_datum)
 
 with open('movie_code.json', "w", encoding='euc-kr') as f:
-    json.dump(movie_data, f, ensure_ascii=False)
+    json.dump(movie_data, f, ensure_ascii=False, indent=4)
